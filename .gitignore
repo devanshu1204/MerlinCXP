@@ -1,0 +1,63 @@
+#************** Client **************#
+# dependencies
+client/node_modules
+client/.yarn
+
+# testing
+client/coverage
+
+# production
+client/build
+
+# misc
+client/.DS_Store
+client/.env.local
+client/.env.development.local
+client/.env.test.local
+client/.env.production.local
+client/.eslintcache
+
+client/.idea
+client/.vscode
+
+client/src/styles/tailwind.css
+
+client/npm-debug.log*
+client/yarn-debug.log*
+client/yarn-error.log*
+
+client/.yarn/*
+client/!.yarn/patches
+client/!.yarn/releases
+client/!.yarn/plugins
+client/!.yarn/sdks
+client/!.yarn/versions
+client/.pnp.*
+
+#amplify-do-not-edit-begin
+client/amplify/
+#client/amplify/\#current-cloud-backend
+#client/amplify/.config/local-*
+#client/amplify/logs
+#client/amplify/mock-data
+#client/amplify/mock-api-resources
+#client/amplify/backend/amplify-meta.json
+#client/amplify/backend/.temp
+client/build/
+client/dist/
+client/node_modules/
+client/aws-exports.js
+client/awsconfiguration.json
+client/amplifyconfiguration.json
+client/amplifyconfiguration.dart
+client/amplify-build-config.json
+client/amplify-gradle-config.json
+client/amplifytools.xcconfig
+client/.secret-*
+client/**.sample
+#amplify-do-not-edit-end
+
+client/.env
+
+#************** Root **************#
+.DS_Store
