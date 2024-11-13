@@ -4,8 +4,11 @@ import AvatarGroup from '@mui/material/AvatarGroup';
 import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
-import CardContent from '@mui/material/CardContent';
 import { useState } from 'react';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import CardContent from '@mui/material/CardContent';
+import _ from 'lodash';
 import * as React from 'react';
 import { lighten } from '@mui/material/styles';
 import FirebaseSignInTab from './tabs/FirebaseSignInTab';
@@ -26,33 +29,14 @@ function SignInPage() {
 			<Paper className="h-full w-full px-16 py-8 ltr:border-r-1 rtl:border-l-1 sm:h-auto sm:w-auto sm:rounded-xl sm:p-48 sm:shadow md:flex md:h-full md:w-1/2 md:items-center md:justify-end md:rounded-none md:p-64 md:shadow-none">
 				<CardContent className="mx-auto w-full max-w-320 sm:mx-0 sm:w-320">
 					<img
-						className="w-48"
-						src="/assets/images/logo/logo.svg"
+						className="w-56"
+						src="/assets/images/logo/merlin.svg"
 						alt="logo"
 					/>
 
 					<Typography className="mt-32 text-4xl font-extrabold leading-tight tracking-tight">
 						Sign in
 					</Typography>
-					<div className="mt-2 flex items-baseline font-medium">
-						<Typography>Don't have an account?</Typography>
-						<Link
-							className="ml-4"
-							to="/sign-up"
-						>
-							Sign up
-						</Link>
-					</div>
-
-					<Box
-						className="mt-24 text-md leading-relaxed rounded-lg py-8 px-16"
-						sx={{
-							backgroundColor: (theme) => lighten(theme.palette.primary.main, 0.8),
-							color: 'primary.dark'
-						}}
-					>
-						You are browsing <b>Fuse React Demo</b>. Click on the "Sign in" button to access the Demo and Documentation.
-					</Box>
 
 					{/* Always render Firebase sign-in */}
 					<FirebaseSignInTab />
@@ -66,29 +50,11 @@ function SignInPage() {
 				<div className="z-10 relative w-full max-w-2xl">
 					<div className="text-7xl font-bold leading-none text-gray-100">
 						<div>Welcome to</div>
-						<div>our community</div>
+						<div>MerlinCXP</div>
 					</div>
 					<div className="mt-24 text-lg tracking-tight leading-6 text-gray-400">
-						Fuse helps developers to build organized and well coded dashboards full of beautiful and
-						rich modules. Join us and start building your application today.
-					</div>
-					<div className="flex items-center mt-32">
-						<AvatarGroup
-							sx={{
-								'& .MuiAvatar-root': {
-									borderColor: 'primary.main'
-								}
-							}}
-						>
-							<Avatar src="assets/images/avatars/female-18.jpg" />
-							<Avatar src="assets/images/avatars/female-11.jpg" />
-							<Avatar src="assets/images/avatars/male-09.jpg" />
-							<Avatar src="assets/images/avatars/male-16.jpg" />
-						</AvatarGroup>
-
-						<div className="ml-16 font-medium tracking-tight text-gray-400">
-							More than 17k people joined us, it's your turn
-						</div>
+						<div>Be Awesome!!</div>
+						<div>Leverage the Power of GenAI and Cloud technologies to turbocharge your customer experience. We support you on the simple stuff, so you can be extraordinary!</div>
 					</div>
 				</div>
 			</Box>
