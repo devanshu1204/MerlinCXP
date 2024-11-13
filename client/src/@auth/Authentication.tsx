@@ -12,14 +12,6 @@ import { User } from '@auth/user';
  */
 const authProviders: FuseAuthProviderType[] = [
 	{
-		name: 'jwt',
-		Provider: JwtAuthProvider
-	},
-	{
-		name: 'aws',
-		Provider: AWSAuthProvider
-	},
-	{
 		name: 'firebase',
 		Provider: FirebaseAuthProvider
 	}
