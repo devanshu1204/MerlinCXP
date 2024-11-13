@@ -1,5 +1,7 @@
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import FuseSvgIcon from '@fuse/core/FuseSvgIcon';
+import Typography from '@mui/material/Typography';
 import { useEffect } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import _ from 'lodash';
@@ -31,7 +33,7 @@ const defaultValues = {
 };
 
 function FirebaseSignInForm() {
-	const { signIn } = useFirebaseAuth();
+	const { signIn, signInWithGoogle } = useFirebaseAuth();
 	const dispatch = useAppDispatch();
 
 	const { control, formState, handleSubmit, setValue, setError } = useForm<FormType>({
@@ -42,10 +44,10 @@ function FirebaseSignInForm() {
 
 	const { isValid, dirtyFields, errors } = formState;
 
-	useEffect(() => {
-		setValue('email', 'hi@withinpixels.com', { shouldDirty: true, shouldValidate: true });
-		setValue('password', 'dummyPassword', { shouldDirty: true, shouldValidate: true });
-	}, [setValue]);
+	// useEffect(() => {
+	// 	setValue('email', 'hi@withinpixels.com', { shouldDirty: true, shouldValidate: true });
+	// 	setValue('password', 'dummyPassword', { shouldDirty: true, shouldValidate: true });
+	// }, [setValue]);
 
 	function onSubmit(formData: FormType) {
 		const { email, password } = formData;
@@ -97,6 +99,14 @@ function FirebaseSignInForm() {
 		});
 	}
 
+	const handleGoogleSignIn = () => {
+		signInWithGoogle()
+			.catch((error) => {
+				console.error('Google sign-in error:', error);
+				dispatch(showMessage({ message: error.message }));
+			});
+	};
+
 	return (
 		<div className="w-full">
 			<form
@@ -113,6 +123,7 @@ function FirebaseSignInForm() {
 							{...field}
 							className="mb-24"
 							label="Email"
+							placeholder="john@doe.com"
 							autoFocus
 							type="email"
 							error={!!errors.email}
@@ -132,6 +143,7 @@ function FirebaseSignInForm() {
 							{...field}
 							className="mb-24"
 							label="Password"
+							placeholder="********"
 							type="password"
 							error={!!errors.password}
 							helperText={errors?.password?.message}
@@ -151,7 +163,32 @@ function FirebaseSignInForm() {
 					type="submit"
 					size="large"
 				>
-					Sign in
+					Sign in with email
+				</Button>
+
+				<div className="mt-32 flex items-center">
+					<div className="flex-auto border-t" />
+					<Typography className="mx-8" color="text.secondary">
+						Or
+					</Typography>
+					<div className="flex-auto border-t" />
+				</div>
+
+				<Button
+					variant="outlined"
+					className="w-full mt-16"
+					onClick={handleGoogleSignIn}
+				>
+					<img 
+						src="/assets/icons/auth/google.svg"
+						alt="Google"
+						className="mr-8"
+						style={{ 
+							width: '20px',
+							height: '20px'
+						}}
+					/>
+					Sign in with Google
 				</Button>
 			</form>
 		</div>
