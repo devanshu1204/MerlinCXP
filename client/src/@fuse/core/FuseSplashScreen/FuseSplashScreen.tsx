@@ -12,7 +12,7 @@ function FuseSplashScreen() {
 			<div className="logo">
 				<img
 					width="128"
-					src="/assets/images/logo/logo.svg"
+					src="/assets/images/logo/merlin.svg"
 					alt="logo"
 				/>
 			</div>

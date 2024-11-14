@@ -26,23 +26,23 @@ function Logo() {
 			<div className="flex flex-1 items-center space-x-8 px-10">
 				<img
 					className="logo-icon h-32 w-32"
-					src="/assets/images/logo/logo.svg"
+					src="/assets/images/logo/merlin.svg"
 					alt="logo"
 				/>
 				<div className="logo-text flex flex-col flex-auto gap-2">
-					<Typography className="text-2xl tracking-light font-semibold leading-none">FUSE</Typography>
+					<Typography className="text-2xl tracking-light font-semibold leading-none">Merlin</Typography>
 					<Typography
 						className="text-[13.6px] tracking-light font-semibold leading-none"
 						color="primary"
 						sx={{
-							color: '#82d7f7'
+							color: '#ffffff'
 						}}
 					>
-						REACT
+						CXP
 					</Typography>
 				</div>
 			</div>
-			<MainProjectSelection />
+			
 		</Root>
 	);
 }
