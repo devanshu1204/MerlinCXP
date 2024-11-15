@@ -1,36 +1,37 @@
-import DemoContent from '@fuse/core/DemoContent';
-import FusePageSimple from '@fuse/core/FusePageSimple';
+import { useState } from 'react';
+import FusePageCarded from '@fuse/core/FusePageCarded';
 import { useTranslation } from 'react-i18next';
-import { styled } from '@mui/material/styles';
-
-const Root = styled(FusePageSimple)(({ theme }) => ({
-	'& .FusePageSimple-header': {
-		backgroundColor: theme.palette.background.paper,
-		borderBottomWidth: 1,
-		borderStyle: 'solid',
-		borderColor: theme.palette.divider
-	},
-	'& .FusePageSimple-content': {},
-	'& .FusePageSimple-sidebarHeader': {},
-	'& .FusePageSimple-sidebarContent': {}
-}));
+import UserTable from './components/UserTable';
+import UserDialog from './components/UserDialog';
+import { Button } from '@mui/material';
+import FuseSvgIcon from '@fuse/core/FuseSvgIcon';
 
 function UserCreation() {
 	const { t } = useTranslation('userCreationPage');
+	const [openDialog, setOpenDialog] = useState(false);
 
 	return (
-		<Root
+		<FusePageCarded
 			header={
-				<div className="p-24">
-					<h4>{t('TITLE')}</h4>
+				<div className="flex flex-col sm:flex-row space-y-16 sm:space-y-0 flex-1 w-full items-center justify-between py-24 px-24 md:px-32">
+					<h1 className="text-4xl font-semibold tracking-tight">
+						{t('User Management')}
+					</h1>
+					<Button
+						variant="contained"
+						color="secondary"
+						onClick={() => setOpenDialog(true)}
+						startIcon={<FuseSvgIcon>heroicons-outline:plus</FuseSvgIcon>}
+					>
+						Add User
+					</Button>
 				</div>
 			}
 			content={
-				<div className="p-24">
-					<h4>Content</h4>
-					<br />
-					<DemoContent />
-				</div>
+				<>
+					<UserTable />
+					<UserDialog open={openDialog} onClose={() => setOpenDialog(false)} />
+				</>
 			}
 		/>
 	);

@@ -18,7 +18,9 @@ const navigationConfig: FuseNavItemType[] = [
 		translate: 'EXAMPLE',
 		type: 'item',
 		icon: 'heroicons-outline:star',
-		url: 'example'
+		url: 'example',
+		auth: ['guest', 'admin'],
+		disabled: true
 	},
 	{
 		id: 'user-creation',

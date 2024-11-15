@@ -15,7 +15,8 @@
         "apps.calendar",
         "apps.mailbox",
         "apps.contacts"
-      ]
+      ],
+      "loginRedirectUrl": "/user-creation"
     }
   ]
 }
