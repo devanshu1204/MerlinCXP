@@ -27,6 +27,46 @@ const navigationConfig: FuseNavItemType[] = [
 		type: 'item',
 		icon: 'material-solid:manage_accounts',
 		url: 'user-creation'
+	},
+	{
+		id: 'user-management',
+		title: 'User Management',
+		translate: 'User-Management',
+		type: 'item',
+		icon: 'material-solid:manage_accounts',
+		url: 'user-management'
+	},
+	{
+		id: 'dashboard',
+		title: 'Dashboard',
+		translate: 'Dashboard',
+		type: 'item',
+		icon: 'material-solid:analytics',
+		url: 'dashboard'
+	},
+	{
+		id: 'configuration',
+		title: 'Configuration',
+		translate: 'Configuration',
+		type: 'item',
+		icon: 'material-solid:settings',
+		url: 'configuration'
+	},
+	{
+		id: 'task-list',
+		title: 'Task List',
+		translate: 'Task-List',
+		type: 'item',
+		icon: 'heroicons-solid:clipboard-document-list',
+		url: 'task-list'
+	},
+	{
+		id: 'decision-screen',
+		title: 'Decision Screen',
+		translate: 'Decision-Screen',
+		type: 'item',
+		icon: 'heroicons-solid:clipboard-document-list',
+		url: 'decision-screen'
 	}
 ];
 
